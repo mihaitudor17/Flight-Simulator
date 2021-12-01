@@ -1,20 +1,78 @@
-// Flight Simulator.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
 
 #include <iostream>
+#include <glew.h>
+#include <glfw3.h>
+#include "Skybox.h"
+
+void mouse_callback(GLFWwindow* window, double xpos, double ypos)
+{
+    Camera* handler = reinterpret_cast<Camera*>(glfwGetWindowUserPointer(window));
+    if (handler)
+        handler->MouseControl((float)xpos, (float)ypos);
+}
+
+/// Initializeaza fereastra si face un contex OpenGL in aceasta fereastra
+void InitWindow(GLFWwindow* (&window), const std::string& title)
+{
+    if (!glfwInit())
+    {
+        std::cerr << "GLFW failed to initialize!" << std::endl;
+        exit(-1);
+    }
+
+    window = glfwCreateWindow(800, 600, title.c_str(), NULL, NULL);
+
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
+    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+
+    glfwMakeContextCurrent(window);
+
+    if (glewInit() != GLEW_OK)
+    {
+        std::cerr << "GLEW failed to initialize!" << std::endl;
+        exit(-1);
+    }
+
+    glfwSwapInterval(1);       
+
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+    glClearColor(0.0f, 0.0f, 0.0f, 1.0);
+
+    glfwSetCursorPosCallback(window, mouse_callback);
+    glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+    glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_NORMAL);
+}
+/// functia care deseneaza
+void RenderFunction(GLFWwindow* window)
+{
+    std::vector<std::string> Images
+    {
+            "../PictureSkybox/right.jpg",
+            "../PictureSkybox/left.jpg",
+            "../PictureSkybox/top.jpg",
+            "..//PictureSkybox/bottom.jpg",
+            "../PictureSkybox/front.jpg",
+            "../PictureSkybox/back.jpg"
+    };
+    Skybox skybox(Images);
+    Camera* camera = new Camera(800, 600, glm::vec3(0, 0, 0));
+    glfwSetWindowUserPointer(window, reinterpret_cast<void*>(camera));
+    while (!glfwWindowShouldClose(window))
+    {
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+        glEnable(GL_DEPTH_TEST);
+        skybox.Draw(camera);
+        glfwSwapBuffers(window);
+        glfwPollEvents();
+    }
+}
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    GLFWwindow* window;
+    InitWindow(window, "Fereastra");
+    RenderFunction(window);
 }
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
