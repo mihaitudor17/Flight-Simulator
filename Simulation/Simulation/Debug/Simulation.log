@@ -1,1 +1,3 @@
-﻿  Simulation.vcxproj -> C:\BitBucket\FlightSimulator\Modelare-Grafica\Simulation\Debug\Simulation.exe
+﻿  Simulation.cpp
+C:\BitBucket\FlightSimulator\Modelare-Grafica\Simulation\Simulation\Simulation.cpp(82,15): warning C4244: 'initializing': conversion from 'double' to 'GLfloat', possible loss of data
+  Simulation.vcxproj -> C:\BitBucket\FlightSimulator\Modelare-Grafica\Simulation\Debug\Simulation.exe
