@@ -55,6 +55,10 @@ public:
     {
         glUniform1f(glGetUniformLocation(ID, name.c_str()), value);
     }
+    void SetInt(const std::string& name, const int& value) const
+    {
+        glUniform1i(glGetUniformLocation(ID, name.c_str()), value);
+    }
 private:
     void Init(const char* vertexPath, const char* fragmentPath)
     {

@@ -48,6 +48,8 @@ static unsigned int loadCubemap(std::vector<std::string> faces)
     glGenTextures(1, &textureID);
     glBindTexture(GL_TEXTURE_CUBE_MAP, textureID);
 
+    stbi_set_flip_vertically_on_load(false);
+
     int width, height, nrChannels;
     for (unsigned int i = 0; i < faces.size(); i++)
     {
@@ -95,7 +97,8 @@ void Skybox::Draw(Camera* camera)
     if (skyboxShader == nullptr)
         skyboxShader = new Shader("..\\Shaders\\Skybox.vs", "..\\Shaders\\Skybox.frag");
     auto proj_mat = camera->GetProjectionMatrix();
-    auto view_mat = camera->GetViewMatrix();
+    auto view_mat = glm::mat4(glm::mat3(camera->GetViewMatrix()));
+   
     glDisable(GL_DEPTH_TEST);
     skyboxShader->Use();
     skyboxShader->SetMat4("projection", proj_mat);

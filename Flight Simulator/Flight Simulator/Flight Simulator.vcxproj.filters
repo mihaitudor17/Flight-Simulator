@@ -13,12 +13,24 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Shaders">
+      <UniqueIdentifier>{080d6399-fad0-46a6-8b59-70f19d15dcfe}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Flight Simulator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Skybox.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Terrain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PointLight.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -32,9 +44,40 @@
     <ClInclude Include="Skybox.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Terrain.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PointLight.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\Shaders\Skybox.frag" />
-    <None Include="..\Shaders\Skybox.vs" />
+    <None Include="..\Shaders\Skybox.vs">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="..\Shaders\Skybox.frag">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="..\Shaders\Lamp.fs">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="..\Shaders\ShadowMappingDepth.vs">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="..\Shaders\ShadowMappingDepth.fs">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="..\Shaders\ShadowMapping.vs">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="..\Shaders\ShadowMapping.fs">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="..\Shaders\Lamp.vs">
+      <Filter>Shaders</Filter>
+    </None>
   </ItemGroup>
 </Project>
