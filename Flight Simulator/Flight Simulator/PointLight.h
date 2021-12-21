@@ -7,8 +7,8 @@ class PointLight
 {
 	glm::vec3 position = { 0,0,0 };
 	
-	float near_plane = 0.1f, far_plane = 3000.0f;
-	glm::mat4 Projection = glm::ortho(-10.0f, 10.0f, -10.0f, 10.0f, near_plane, far_plane);
+	float near_plane = 0.3f, far_plane = 500.0f;
+	glm::mat4 Projection = glm::ortho(-50.0f, 50.0f, -50.0f, 50.0f, near_plane, far_plane);
 public:
 	PointLight() = default;
 	PointLight(const glm::vec3& pos);

@@ -1,5 +1,5 @@
-#define SHADOW_WIDTH 1024
-#define SHADOW_HEIGHT 1024
+#define SHADOW_WIDTH  3072
+#define SHADOW_HEIGHT 3072
 
 #define SCR_HEIGHT 800
 #define SCR_WIDTH 1200
@@ -193,7 +193,7 @@ void RenderFunction(GLFWwindow* window)
             "../PictureSkybox/back.jpg"
     };
     Skybox skybox(Images);
-    PointLight light({ -2.0f, 200.0f, -1.0f });
+    PointLight light({ -2.0f, 50.0f, -1.0f });
     Camera* camera = new Camera(SCR_WIDTH, SCR_HEIGHT, glm::vec3(-4, 6, -3));
     glfwSetWindowUserPointer(window, reinterpret_cast<void*>(camera));
     glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
@@ -241,6 +241,7 @@ void RenderFunction(GLFWwindow* window)
         glViewport(0, 0, SCR_WIDTH, SCR_HEIGHT);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         ShadowMappingShader->Use();
+
         glm::mat4 projection = camera->GetProjectionMatrix();
         glm::mat4 view = camera->GetViewMatrix();
         ShadowMappingShader->SetMat4("projection", projection);
@@ -259,8 +260,9 @@ void RenderFunction(GLFWwindow* window)
 
         // glActiveTexture(GL_TEXTURE0);
         // glBindTexture(GL_TEXTURE_2D, floorTexture);
-        glActiveTexture(GL_TEXTURE1);
+        glActiveTexture(GL_TEXTURE5);
         glBindTexture(GL_TEXTURE_2D, depthMap);
+        ShadowMappingShader->SetInt("shadowMap", 5);
         glDisable(GL_CULL_FACE);
 
         glDepthMask(GL_FALSE);
