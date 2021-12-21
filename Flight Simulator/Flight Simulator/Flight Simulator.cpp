@@ -16,6 +16,8 @@
 //Model* Airplane = nullptr;
 Airplane *airplane = nullptr;
 
+Model* Tower = nullptr;
+
 Shader* ShadowMappingDepthShader = nullptr;
 Shader* ShadowMappingShader = nullptr;
 
@@ -169,6 +171,12 @@ void RenderScene(const Shader* shader)
 
     airplane->Draw(shader);
 
+    model = glm::scale(model, { 24.0f, 24.0f, 24.0f });
+    model = glm::translate(model, {1.0f, 0.957f, 2.0f});
+    model = glm::rotate(model, glm::radians(90.0f), { 0.0f, 1.0f, 0.0f });
+    shader->SetMat4("model", model);
+    Tower->Draw(shader);
+
     glDisable(GL_DEPTH_TEST);
 }
 
@@ -186,7 +194,7 @@ void RenderFunction(GLFWwindow* window)
     };
     Skybox skybox(Images);
     PointLight light({ -2.0f, 200.0f, -1.0f });
-    Camera* camera = new Camera(SCR_WIDTH, SCR_HEIGHT, glm::vec3(0, 0, 0));
+    Camera* camera = new Camera(SCR_WIDTH, SCR_HEIGHT, glm::vec3(-4, 6, -3));
     glfwSetWindowUserPointer(window, reinterpret_cast<void*>(camera));
     glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 
@@ -280,7 +288,7 @@ int main()
     InitShaders();
     InitDepthFBO();
     InitTerrain();
-    //Airplane = new Model("../models/boeing_747/scene.gltf");
+    Tower = new Model("../models/tower/scene.gltf");
     airplane = new Airplane({ 0,0,0 });
     airplane->SetScale({0.3f, 0.3f, 0.3f});
     RenderFunction(window);
