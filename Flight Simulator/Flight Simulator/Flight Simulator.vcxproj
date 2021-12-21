@@ -72,8 +72,8 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>..\..\_external\glfw-3.3.4.bin.WIN32\include\GLFW;..\..\_external\glew-2.1.0\include\GL;..\..\_external\stb-master;..\..\_external\glm;$(IncludePath)</IncludePath>
-    <LibraryPath>..\..\_external\glfw-3.3.4.bin.WIN32\lib-vc2019;..\..\_external\glew-2.1.0\lib\Release\Win32;..\..\_external\glm;$(LibraryPath)</LibraryPath>
+    <IncludePath>..\..\_external\glfw-3.3.4.bin.WIN32\include\GLFW;..\..\_external\glew-2.1.0\include\GL;..\..\_external\stb-master;..\..\_external\glm;..\..\_external\assimp\include;$(IncludePath)</IncludePath>
+    <LibraryPath>..\..\_external\glfw-3.3.4.bin.WIN32\lib-vc2019;..\..\_external\glew-2.1.0\lib\Release\Win32;..\..\_external\glm;..\..\_external\assimp\lib32;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -95,7 +95,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>opengl32.lib;glfw3dll.lib;glew32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>assimp-vc142-mtd.lib;opengl32.lib;glfw3dll.lib;glew32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -143,19 +143,26 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Airplane.cpp" />
     <ClCompile Include="Flight Simulator.cpp" />
+    <ClCompile Include="Mesh.cpp" />
+    <ClCompile Include="Model.cpp" />
     <ClCompile Include="PointLight.cpp" />
     <ClCompile Include="Skybox.cpp" />
     <ClCompile Include="Terrain.cpp" />
     <ClCompile Include="Texture.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Airplane.h" />
     <ClInclude Include="Camera.h" />
+    <ClInclude Include="Mesh.h" />
+    <ClInclude Include="Model.h" />
     <ClInclude Include="PointLight.h" />
     <ClInclude Include="Shader.h" />
     <ClInclude Include="Skybox.h" />
     <ClInclude Include="Terrain.h" />
     <ClInclude Include="Texture.h" />
+    <ClInclude Include="VertexStruct.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\Shaders\Lamp.fs" />

@@ -10,6 +10,11 @@
 #include "Skybox.h"
 #include "Terrain.h"
 #include "PointLight.h"
+#include "Model.h"
+#include "Airplane.h"
+
+//Model* Airplane = nullptr;
+Airplane *airplane = nullptr;
 
 Shader* ShadowMappingDepthShader = nullptr;
 Shader* ShadowMappingShader = nullptr;
@@ -18,6 +23,9 @@ Terrain* terrain = nullptr;
 
 unsigned int depthMapFBO = 0;
 unsigned int depthMap = 0;
+
+double deltaTime = 0.0;
+double lastFrame = 0.0;
 
 void InitDepthFBO()
 {
@@ -86,16 +94,33 @@ void keyboard_callback(GLFWwindow* window, int key, int scancode, int action, in
     //}
 }
 
-void ProcessInput(GLFWwindow* window, Camera* camera)
+void ProcessInput(GLFWwindow* window, Camera* camera, Airplane* airplane)
 {
+    airplane->ProcessInput(deltaTime);
+
+    if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
+        glfwSetWindowShouldClose(window, true);
     if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
-        camera->ProcessKeyboard(ECameraMovementType::FORWARD, 0.01);
+        camera->ProcessKeyboard(ECameraMovementType::FORWARD, deltaTime);
     if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
-        camera->ProcessKeyboard(ECameraMovementType::LEFT, 0.01);
+        camera->ProcessKeyboard(ECameraMovementType::LEFT, deltaTime);
     if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
-       camera->ProcessKeyboard(ECameraMovementType::BACKWARD, 0.01);
+        camera->ProcessKeyboard(ECameraMovementType::BACKWARD, deltaTime);
     if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
-        camera->ProcessKeyboard(ECameraMovementType::RIGHT, 0.01);
+        camera->ProcessKeyboard(ECameraMovementType::RIGHT, deltaTime);
+
+    if (glfwGetKey(window, GLFW_KEY_UP) == GLFW_PRESS)
+        airplane->ModifyThrottle(deltaTime, 1);
+    if (glfwGetKey(window, GLFW_KEY_DOWN) == GLFW_PRESS)
+        airplane->ModifyThrottle(deltaTime, -1);
+    if (glfwGetKey(window, GLFW_KEY_LEFT) == GLFW_PRESS)
+        airplane->ModifyYaw(deltaTime, 1);
+    if (glfwGetKey(window, GLFW_KEY_RIGHT) == GLFW_PRESS)
+        airplane->ModifyYaw(deltaTime, -1);
+
+    if (glfwGetKey(window, GLFW_KEY_SPACE) == GLFW_PRESS)
+        airplane->Break(deltaTime);
+
 }
 
 /// Initializeaza fereastra si face un contex OpenGL in aceasta fereastra
@@ -121,7 +146,7 @@ void InitWindow(GLFWwindow* (&window), const std::string& title)
         exit(-1);
     }
 
-    glfwSwapInterval(1);       
+    glfwSwapInterval(1);
 
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
@@ -136,11 +161,15 @@ void InitWindow(GLFWwindow* (&window), const std::string& title)
 
 void RenderScene(const Shader* shader)
 {
+    glEnable(GL_DEPTH_TEST);
     glm::mat4 model = glm::mat4(1.0f);
     shader->Use();
     shader->SetMat4("model", model);
     terrain->Render();
 
+    airplane->Draw(shader);
+
+    glDisable(GL_DEPTH_TEST);
 }
 
 /// functia care deseneaza
@@ -156,7 +185,7 @@ void RenderFunction(GLFWwindow* window)
             "../PictureSkybox/back.jpg"
     };
     Skybox skybox(Images);
-    PointLight light({-2.0f, 200.0f, -1.0f});
+    PointLight light({ -2.0f, 200.0f, -1.0f });
     Camera* camera = new Camera(SCR_WIDTH, SCR_HEIGHT, glm::vec3(0, 0, 0));
     glfwSetWindowUserPointer(window, reinterpret_cast<void*>(camera));
     glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
@@ -168,8 +197,8 @@ void RenderFunction(GLFWwindow* window)
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         glEnable(GL_DEPTH_TEST);
 
-
-
+        deltaTime = glfwGetTime() - lastFrame;
+        lastFrame = glfwGetTime();
 
         // render scene from light's point of view
         ShadowMappingDepthShader->Use();
@@ -220,12 +249,12 @@ void RenderFunction(GLFWwindow* window)
 
 
 
-       // glActiveTexture(GL_TEXTURE0);
-       // glBindTexture(GL_TEXTURE_2D, floorTexture);
+        // glActiveTexture(GL_TEXTURE0);
+        // glBindTexture(GL_TEXTURE_2D, floorTexture);
         glActiveTexture(GL_TEXTURE1);
         glBindTexture(GL_TEXTURE_2D, depthMap);
         glDisable(GL_CULL_FACE);
-        
+
         glDepthMask(GL_FALSE);
         skybox.Draw(camera);
         glDisable(GL_DEPTH_TEST);
@@ -239,7 +268,8 @@ void RenderFunction(GLFWwindow* window)
 
         glfwSwapBuffers(window);
         glfwPollEvents();
-        ProcessInput(window, camera);
+        airplane->Update(deltaTime);
+        ProcessInput(window, camera, airplane);
     }
 }
 
@@ -250,6 +280,9 @@ int main()
     InitShaders();
     InitDepthFBO();
     InitTerrain();
+    //Airplane = new Model("../models/boeing_747/scene.gltf");
+    airplane = new Airplane({ 0,0,0 });
+    airplane->SetScale({0.3f, 0.3f, 0.3f});
     RenderFunction(window);
 }
 
