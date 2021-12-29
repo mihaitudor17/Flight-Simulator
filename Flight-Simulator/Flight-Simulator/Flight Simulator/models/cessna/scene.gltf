@@ -1,0 +1,455 @@
+{
+  "accessors": [
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 1136,
+      "max": [
+        6.5049991607666016,
+        3.343031644821167,
+        2.5269477367401123
+      ],
+      "min": [
+        -6.50640869140625,
+        -0.019624475389719009,
+        -7.2664394378662109
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 13632,
+      "componentType": 5126,
+      "count": 1136,
+      "max": [
+        1,
+        0.99993187189102173,
+        0.99974590539932251
+      ],
+      "min": [
+        -1,
+        -0.99996721744537354,
+        -0.99999988079071045
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5126,
+      "count": 1136,
+      "max": [
+        1,
+        0.99289679527282715,
+        0.99996471405029297,
+        1
+      ],
+      "min": [
+        -1,
+        -0.99963784217834473,
+        -0.99999415874481201,
+        -1
+      ],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 1136,
+      "max": [
+        0.99879997968673706,
+        0.98960000276565552
+      ],
+      "min": [
+        0.0020000000949949026,
+        0.0029000043869018555
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 9088,
+      "componentType": 5126,
+      "count": 1136,
+      "max": [
+        0.99879997968673706,
+        0.98960000276565552
+      ],
+      "min": [
+        0.0020000000949949026,
+        0.0029000043869018555
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 18176,
+      "componentType": 5126,
+      "count": 1136,
+      "max": [
+        0.99879997968673706,
+        0.98960000276565552
+      ],
+      "min": [
+        0.0020000000949949026,
+        0.0029000043869018555
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 27264,
+      "componentType": 5126,
+      "count": 1136,
+      "max": [
+        0.99879997968673706,
+        0.98960000276565552
+      ],
+      "min": [
+        0.0020000000949949026,
+        0.0029000043869018555
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 36352,
+      "componentType": 5126,
+      "count": 1136,
+      "max": [
+        0.99879997968673706,
+        0.98960000276565552
+      ],
+      "min": [
+        0.0020000000949949026,
+        0.0029000043869018555
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 45440,
+      "componentType": 5126,
+      "count": 1136,
+      "max": [
+        0.99879997968673706,
+        0.98960000276565552
+      ],
+      "min": [
+        0.0020000000949949026,
+        0.0029000043869018555
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 54528,
+      "componentType": 5126,
+      "count": 1136,
+      "max": [
+        0.99879997968673706,
+        0.98960000276565552
+      ],
+      "min": [
+        0.0020000000949949026,
+        0.0029000043869018555
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 63616,
+      "componentType": 5126,
+      "count": 1136,
+      "max": [
+        0.99879997968673706,
+        0.98960000276565552
+      ],
+      "min": [
+        0.0020000000949949026,
+        0.0029000043869018555
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 72704,
+      "componentType": 5126,
+      "count": 1136,
+      "max": [
+        0.99879997968673706,
+        0.98960000276565552
+      ],
+      "min": [
+        0.0020000000949949026,
+        0.0029000043869018555
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 81792,
+      "componentType": 5126,
+      "count": 1136,
+      "max": [
+        0.99879997968673706,
+        0.98960000276565552
+      ],
+      "min": [
+        0.0020000000949949026,
+        0.0029000043869018555
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "componentType": 5125,
+      "count": 3342,
+      "max": [
+        1135
+      ],
+      "min": [
+        0
+      ],
+      "type": "SCALAR"
+    }
+  ],
+  "asset": {
+    "extras": {
+      "author": "MaX3Dd (https://sketchfab.com/MaX3Dd)",
+      "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+      "source": "https://sketchfab.com/3d-models/low-poly-airplane-65cc7c4349174f7bbb20ed70206377b5",
+      "title": "Low-poly Airplane"
+    },
+    "generator": "Sketchfab-9.13.0",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 13368,
+      "byteOffset": 0,
+      "name": "floatBufferViews",
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 90880,
+      "byteOffset": 13368,
+      "byteStride": 8,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 27264,
+      "byteOffset": 104248,
+      "byteStride": 12,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 18176,
+      "byteOffset": 131512,
+      "byteStride": 16,
+      "name": "floatBufferViews",
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 149688,
+      "uri": "scene.bin"
+    }
+  ],
+  "images": [
+    {
+      "uri": "textures/airplane_baseColor.png"
+    },
+    {
+      "uri": "textures/airplane_normal.png"
+    }
+  ],
+  "materials": [
+    {
+      "doubleSided": true,
+      "name": "airplane",
+      "normalTexture": {
+        "index": 1,
+        "scale": 1,
+        "texCoord": 0
+      },
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "baseColorTexture": {
+          "index": 0,
+          "texCoord": 0
+        },
+        "metallicFactor": 0,
+        "roughnessFactor": 1
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "awionetka_airplane_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 1,
+            "POSITION": 0,
+            "TANGENT": 2,
+            "TEXCOORD_0": 3,
+            "TEXCOORD_1": 4,
+            "TEXCOORD_2": 5,
+            "TEXCOORD_3": 6,
+            "TEXCOORD_4": 7,
+            "TEXCOORD_5": 8,
+            "TEXCOORD_6": 9,
+            "TEXCOORD_7": 10,
+            "TEXCOORD_8": 11,
+            "TEXCOORD_9": 12
+          },
+          "indices": 13,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1
+      ],
+      "name": "RootNode (gltf orientation matrix)",
+      "rotation": [
+        -0.70710678118654746,
+        -0,
+        -0,
+        0.70710678118654757
+      ]
+    },
+    {
+      "children": [
+        2
+      ],
+      "name": "RootNode (model correction matrix)"
+    },
+    {
+      "children": [
+        3
+      ],
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        -1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "name": "airplane.fbx"
+    },
+    {
+      "children": [
+        4
+      ],
+      "name": "RootNode"
+    },
+    {
+      "children": [
+        5
+      ],
+      "matrix": [
+        10,
+        0,
+        0,
+        0,
+        0,
+        9.9999999999999893,
+        4.3711390063094768e-07,
+        0,
+        0,
+        -4.3711390063094768e-07,
+        9.9999999999999893,
+        0,
+        -0.0070476531982421875,
+        16.617034912109375,
+        -23.697458267211914,
+        1
+      ],
+      "name": "awionetka"
+    },
+    {
+      "children": [
+        6
+      ],
+      "matrix": [
+        1,
+        0,
+        -0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0.00070476531982421875,
+        -1.6617035865783691,
+        2.3697457313537598,
+        1
+      ],
+      "name": ""
+    },
+    {
+      "mesh": 0,
+      "name": "awionetka_airplane_0"
+    }
+  ],
+  "samplers": [
+    {
+      "magFilter": 9729,
+      "minFilter": 9987,
+      "wrapS": 10497,
+      "wrapT": 10497
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "OSG_Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "textures": [
+    {
+      "sampler": 0,
+      "source": 0
+    },
+    {
+      "sampler": 0,
+      "source": 1
+    }
+  ]
+}
+

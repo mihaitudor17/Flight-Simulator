@@ -1,6 +1,0 @@
-﻿  Flight Simulator.cpp
-C:\Users\ASUS\Desktop\MG-versiunea 2\Flight-Simulator\Flight Simulator\Flight Simulator\Flight Simulator.cpp(92,67): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\ASUS\Desktop\MG-versiunea 2\Flight-Simulator\Flight Simulator\Flight Simulator\Flight Simulator.cpp(94,64): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\ASUS\Desktop\MG-versiunea 2\Flight-Simulator\Flight Simulator\Flight Simulator\Flight Simulator.cpp(96,67): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\ASUS\Desktop\MG-versiunea 2\Flight-Simulator\Flight Simulator\Flight Simulator\Flight Simulator.cpp(98,65): warning C4305: 'argument': truncation from 'double' to 'float'
-  Flight Simulator.vcxproj -> C:\Users\ASUS\Desktop\MG-versiunea 2\Flight-Simulator\Flight Simulator\Debug\Flight Simulator.exe
