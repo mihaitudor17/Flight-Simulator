@@ -1,0 +1,17 @@
+﻿  Airplane.cpp
+C:\BitBucket\Flight-Simulator\Flight-Simulator\Flight-Simulator\Flight Simulator\Flight Simulator\Texture.h(2,10): fatal error C1083: Cannot open include file: 'glew.h': No such file or directory
+  Flight Simulator.cpp
+C:\BitBucket\Flight-Simulator\Flight-Simulator\Flight-Simulator\Flight Simulator\Flight Simulator\Flight Simulator.cpp(8,10): fatal error C1083: Cannot open include file: 'glew.h': No such file or directory
+  Mesh.cpp
+C:\BitBucket\Flight-Simulator\Flight-Simulator\Flight-Simulator\Flight Simulator\Flight Simulator\Texture.h(2,10): fatal error C1083: Cannot open include file: 'glew.h': No such file or directory
+  Model.cpp
+C:\BitBucket\Flight-Simulator\Flight-Simulator\Flight-Simulator\Flight Simulator\Flight Simulator\Texture.h(2,10): fatal error C1083: Cannot open include file: 'glew.h': No such file or directory
+  PointLight.cpp
+C:\BitBucket\Flight-Simulator\Flight-Simulator\Flight-Simulator\Flight Simulator\Flight Simulator\PointLight.h(2,10): fatal error C1083: Cannot open include file: 'GLM.hpp': No such file or directory
+  Skybox.cpp
+C:\BitBucket\Flight-Simulator\Flight-Simulator\Flight-Simulator\Flight Simulator\Flight Simulator\Camera.h(2,10): fatal error C1083: Cannot open include file: 'GLM.hpp': No such file or directory
+  Terrain.cpp
+C:\BitBucket\Flight-Simulator\Flight-Simulator\Flight-Simulator\Flight Simulator\Flight Simulator\Texture.h(2,10): fatal error C1083: Cannot open include file: 'glew.h': No such file or directory
+  Texture.cpp
+C:\BitBucket\Flight-Simulator\Flight-Simulator\Flight-Simulator\Flight Simulator\Flight Simulator\Texture.cpp(2,10): fatal error C1083: Cannot open include file: 'stb_image.h': No such file or directory
+  Generating Code...

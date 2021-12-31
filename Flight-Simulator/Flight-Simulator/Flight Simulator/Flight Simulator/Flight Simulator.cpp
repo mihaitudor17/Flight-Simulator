@@ -161,7 +161,7 @@ void InitWindow(GLFWwindow* (&window), const std::string& title)
         exit(-1);
     }
 
-    window = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, title.c_str(), NULL, NULL);
+    window = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, title.c_str(), glfwGetPrimaryMonitor(), NULL);
 
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
@@ -256,6 +256,7 @@ void RenderFunction(GLFWwindow* window)
     };
     Skybox skybox(Images);
     PointLight light({ 50.0f, 200.0f, 0.0f });
+
     Camera* camera = new Camera(SCR_WIDTH, SCR_HEIGHT, glm::vec3(-4, 6, -3));
     camera->BindAirplane(airplane);
     glfwSetWindowUserPointer(window, reinterpret_cast<void*>(camera));
@@ -360,6 +361,7 @@ int main()
     Hangar = new Model("../models/hangar/source/hangar1.FBX");
     Cessna = new Model("../models/cessna/scene.gltf");
     airplane->SetScale({0.3f, 0.3f, 0.3f});
+
     RenderFunction(window);
 }
 
