@@ -1,9 +1,8 @@
 #define SHADOW_WIDTH  3072
 #define SHADOW_HEIGHT 3072
 
-#define SCR_HEIGHT 800
-#define SCR_WIDTH 1200
 
+#include <Windows.h>
 #include <iostream>
 #include <glew.h>
 #include <glfw3.h>
@@ -12,7 +11,10 @@
 #include "PointLight.h"
 #include "Model.h"
 #include "Airplane.h"
-
+int nScreenWidth = GetSystemMetrics(SM_CXSCREEN);
+int nScreenHeight = GetSystemMetrics(SM_CYSCREEN);
+#define SCR_HEIGHT nScreenHeight 
+#define SCR_WIDTH nScreenWidth
 //Model* Airplane = nullptr;
 Airplane *airplane = nullptr;
 
