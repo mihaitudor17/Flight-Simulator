@@ -1,2 +1,0 @@
-# Modelare-Grafica
-Flight Simulator
